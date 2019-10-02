@@ -5,14 +5,14 @@
 
   setTimeout(() => {
     scanned = true;
-  }, 500);
+  }, 2000);
 
   function resetTimer() {
     scanned = false;
     score = Math.random();
     setTimeout(() => {
       scanned = true;
-    }, 3000);
+    }, 2000);
   }
 </script>
 
