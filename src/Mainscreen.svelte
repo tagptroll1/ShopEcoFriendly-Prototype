@@ -38,7 +38,6 @@
   section {
     position: relative;
     height: 500px;
-    width: 400px;
     margin: 0 auto;
   }
 
@@ -55,9 +54,12 @@
     justify-content: center;
   }
   button {
-    height: 3rem;
+    height: 30px;
     min-width: 150px;
     margin: 7px;
+
+    border-radius: 4px;
+    border: 1px solid white;
   }
 
   .blurred {
