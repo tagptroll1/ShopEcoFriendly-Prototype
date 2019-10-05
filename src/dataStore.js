@@ -38,7 +38,7 @@ const b = [
         checked: false,
     },
     {
-        title: "laktosefri",
+        title: "Laktosefri",
         desck:
             "Check this if you're intolerant to lactose, or avoid eating it for other reasons.",
         checked: false,
