@@ -69,7 +69,7 @@
 
 <section>
   {#if climate}
-    <h2>Values</h2>
+    <h2>Jeg bryr meg om</h2>
     {#each $climates as { title, desc, checked }}
       <div>
         <label title={desc}>
@@ -81,7 +81,7 @@
     {/each}
     <button on:click={() => (climate = false)}>Next</button>
   {:else}
-    <h2>Allergies / Diets</h2>
+    <h2>Mine kostholdsrestriksjoner</h2>
     {#each $allergies as { title, desc, checked }}
       <div>
         <label title={desc}>
