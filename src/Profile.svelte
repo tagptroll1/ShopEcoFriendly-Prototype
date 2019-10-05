@@ -1,6 +1,5 @@
 <script>
-  import stage from "./stageStore";
-  import cart from "./cart";
+  import Onboard from "./Onboard.svelte";
 </script>
 
 <style>
@@ -21,11 +20,6 @@
 </style>
 
 <section>
-  <h1>Dine kjøp</h1>
-  <ul>
-    {#each $cart as item}
-      <li>{item}</li>
-    {/each}
-  </ul>
-  <button on:click={() => ($stage = 'mainscreen')}>Tilbake</button>
+  <h1>Hallo Thomas!</h1>
+  <Onboard />
 </section>

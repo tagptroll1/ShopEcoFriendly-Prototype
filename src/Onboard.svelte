@@ -1,39 +1,11 @@
 <script>
   import stage from "./stageStore";
-
+  import { climates, allergies } from "./dataStore";
   let climate = true;
-
-  const climates = [
-    [
-      "Lavere Co2 utslipp",
-      "Hvor mye Co2 produktene slipper ut gjennom prosessen av å lage og resirkulere varen"
-    ],
-    [
-      "Dyrevelferd",
-      "At dyrene brukt til å produsere denne varer levde et verdig og godt liv, og døde av naturlige årsaker."
-    ],
-    [
-      "Arbeidsvilkår",
-      "At arbeiderene som var med på å lage dette produktet var behandlet rettferdig, og i varetatt"
-    ],
-    ["Kortreiste varer", "Varen er produsert lokart"]
-  ];
-  const allergies = [
-    [
-      "Glutenfritt",
-      "Check this if you're allergic to gluten, or avoid eating it for other reasons."
-    ],
-    [
-      "laktosefri",
-      "Check this if you're intolerant to lactose, or avoid eating it for other reasons."
-    ],
-    ["Vegetar", "Check this if you're a vegetarian"],
-    ["Vegan", "Check this if you're a vegan"]
-  ];
 </script>
 
 <style>
-  *{
+  * {
     color: rgb(77, 136, 77);
   }
   section {
@@ -59,7 +31,7 @@
     background-color: rgb(218, 255, 215);
     color: rgb(86, 226, 140);
   }
-  span:hover{
+  span:hover {
     background-color: rgb(192, 255, 187);
   }
 
@@ -68,7 +40,7 @@
     display: flex;
   }
 
-  div{
+  div {
     margin: 0 5px;
   }
 
@@ -78,7 +50,7 @@
     font-size: 2.2em;
   }
 
-  button{
+  button {
     font-family: inherit;
 
     color: rgb(255, 255, 255);
@@ -89,7 +61,7 @@
     margin: 20px 10px;
     border-radius: 4px;
   }
-  input{
+  input {
     margin-left: auto;
     width: 70px;
   }
@@ -98,30 +70,26 @@
 <section>
   {#if climate}
     <h2>Values</h2>
-    {#each climates as [name, info]}
-
+    {#each $climates as { title, desc, checked }}
       <div>
-        <label title={info}>
+        <label title={desc}>
           <span>?</span>
-          {name}
-          <input type="checkbox" />
+          {title}
+          <input bind:checked type="checkbox" />
         </label>
       </div>
-
     {/each}
     <button on:click={() => (climate = false)}>Next</button>
   {:else}
     <h2>Allergies / Diets</h2>
-    {#each allergies as [name, info]}
-
+    {#each $allergies as { title, desc, checked }}
       <div>
-        <label title={info}>
+        <label title={desc}>
           <span>?</span>
-          {name}
-          <input type="checkbox" />
+          {title}
+          <input bind:checked type="checkbox" />
         </label>
       </div>
-      
     {/each}
     <button on:click={() => (climate = true)}>Back</button>
     <button on:click={() => ($stage = 'mainscreen')}>Save</button>
