@@ -4,7 +4,7 @@
   import { climates, allergies } from "./dataStore";
 
   let scanned = false;
-  const approved = !$allergies.find(allergy => allergy.title == "laktosefri")
+  const approved = !$allergies.find(allergy => allergy.title == "Laktosefri")
     .checked;
 
   setTimeout(() => {
